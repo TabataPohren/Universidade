@@ -26,11 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         calculadorarnp.cpp \
+<<<<<<< HEAD
     pilha.cpp
 
 HEADERS += \
         calculadorarnp.h \
     pilha.h
+=======
+    calc.cpp
+
+HEADERS += \
+        calculadorarnp.h \
+    calc.h
+>>>>>>> 795ad541c62344bbecae7631716b696da5d42a25
 
 FORMS += \
         calculadorarnp.ui
