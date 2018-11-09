@@ -1,5 +1,6 @@
 #include "calculadorarnp.h"
 #include <QApplication>
+#include <QTextLine>
 
 int main(int argc, char *argv[])
 {

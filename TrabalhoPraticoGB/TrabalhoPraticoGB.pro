@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         calculadorarnp.cpp \
-    calc.cpp
+    calc.cpp \
+    gerenciadorpilha.cpp
 
 HEADERS += \
         calculadorarnp.h \
-    calc.h
+    calc.h \
+    gerenciadorpilha.h
 
 FORMS += \
         calculadorarnp.ui

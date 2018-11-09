@@ -1,5 +1,7 @@
 #ifndef CALCULADORARNP_H
 #define CALCULADORARNP_H
+#include "calc.h"
+#include "gerenciadorpilha.h"
 
 #include <QMainWindow>
 
@@ -14,6 +16,11 @@ class CalculadoraRNP : public QMainWindow
 public:
     explicit CalculadoraRNP(QWidget *parent = 0);
     ~CalculadoraRNP();
+    int saveNumber;
+    Calc calculadora;
+    GerenciadorPilha gerenciadorPilha;
+
+
 
 private slots:
     void on_Soma_clicked();
@@ -37,6 +44,26 @@ private slots:
     void on_N9_clicked();
 
     void on_N0_clicked();
+
+    void on_Enter_clicked();
+
+    void on_ExibirValor_textChanged();
+
+    void on_enter_clicked();
+
+    void on_SetaVoltar_clicked();
+
+    void on_Del_clicked();
+
+    void on_Clear_clicked();
+
+    void on_Subtracao_clicked();
+
+    void on_Multiplicacao_clicked();
+
+    void on_Divisao_clicked();
+
+    void on_Rol_clicked();
 
 private:
     Ui::CalculadoraRNP *ui;
