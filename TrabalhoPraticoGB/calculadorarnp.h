@@ -19,6 +19,8 @@ public:
     int saveNumber;
     Calc calculadora;
     GerenciadorPilha gerenciadorPilha;
+    QString save= NULL;
+    bool ok;
 
 
 

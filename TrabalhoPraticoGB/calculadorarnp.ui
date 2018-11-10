@@ -268,7 +268,7 @@
      <string>Rol</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="enter">
+   <widget class="QPushButton" name="Enter">
     <property name="geometry">
      <rect>
       <x>110</x>

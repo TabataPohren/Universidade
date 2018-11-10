@@ -8,6 +8,8 @@ CalculadoraRNP::CalculadoraRNP(QWidget *parent) :
     ui(new Ui::CalculadoraRNP)
 {
     ui->setupUi(this);
+    saveNumber=NULL;
+    QString save= NULL;
 }
 
 CalculadoraRNP::~CalculadoraRNP()
@@ -22,99 +24,87 @@ void CalculadoraRNP::on_Soma_clicked()
     int firstValue = gerenciadorPilha.remover();
     int secondValue = gerenciadorPilha.remover();
 
-    //int result = calculadora.execute(firstValue,secondValue,"+");
-
-   // int teste = calculadora.execute(gerenciadorPilha.remover(),gerenciadorPilha.remover(), "+");
-    //int result = calculadora.execute(firstValue,secondValue, "+");
-    int result = (firstValue + secondValue);
-    //ui->lineEdit->setText(QString("%1").arg(teste));
+    int result = calculadora.execute(firstValue,secondValue, "+");
     gerenciadorPilha.adicionar(result);
     ui->ExibirValor->append(QString("%1").arg(result));
 }
 
 void CalculadoraRNP::on_N1_clicked()
 {
-    saveNumber = 1;
-    gerenciadorPilha.adicionar(1);
-
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "1";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N2_clicked()
 {
-    saveNumber = 2;
-    gerenciadorPilha.adicionar(2);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "2";
+    ui->lineEdit->setText(save);
 }
 
 void CalculadoraRNP::on_N3_clicked()
 {
-    saveNumber = 3;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "3";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N4_clicked()
 {
-    saveNumber = 4;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "4";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N5_clicked()
 {
-    saveNumber = 5;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "5";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N6_clicked()
 {
-    saveNumber = 6;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "6";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N7_clicked()
 {
-    saveNumber = 7;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "7";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N8_clicked()
 {
-    saveNumber = 8;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "8";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N9_clicked()
 {
-    saveNumber = 9;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "9";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_N0_clicked()
 {
-    saveNumber = 0;
-    gerenciadorPilha.adicionar(saveNumber);
-    ui->lineEdit->setText(QString("%1").arg(saveNumber));
+    save = save + "0";
+    ui->lineEdit->setText(save);
 
 }
 
 void CalculadoraRNP::on_Enter_clicked()
 {
+    ui->lineEdit->setText(NULL);
+    gerenciadorPilha.adicionar(save.toInt(&ok,10));
+    ui->ExibirValor->append(save);
 
+    save= "";
 }
 
 
@@ -123,14 +113,9 @@ void CalculadoraRNP::on_ExibirValor_textChanged()
 
 }
 
-void CalculadoraRNP::on_enter_clicked()
-{
-    ui->ExibirValor->append(QString("%1").arg(saveNumber));
-}
-
 void CalculadoraRNP::on_SetaVoltar_clicked()
 {
-    //ui->ExibirValor->cursorForPosition();
+    ui->ExibirValor->setCursorWidth(10);
 }
 
 void CalculadoraRNP::on_Del_clicked()
@@ -146,17 +131,39 @@ void CalculadoraRNP::on_Clear_clicked()
 
 void CalculadoraRNP::on_Subtracao_clicked()
 {
+    ui->ExibirValor->undo();
+    ui->ExibirValor->undo();
+    int firstValue = gerenciadorPilha.remover();
+    int secondValue = gerenciadorPilha.remover();
+
+    int result = calculadora.execute(firstValue,secondValue, "-");
+    gerenciadorPilha.adicionar(result);
+    ui->ExibirValor->append(QString("%1").arg(result));
 
 }
 
 void CalculadoraRNP::on_Multiplicacao_clicked()
 {
+    ui->ExibirValor->undo();
+    ui->ExibirValor->undo();
+    int firstValue = gerenciadorPilha.remover();
+    int secondValue = gerenciadorPilha.remover();
 
+    int result = calculadora.execute(firstValue,secondValue, "*");
+    gerenciadorPilha.adicionar(result);
+    ui->ExibirValor->append(QString("%1").arg(result));
 }
 
 void CalculadoraRNP::on_Divisao_clicked()
 {
+    ui->ExibirValor->undo();
+    ui->ExibirValor->undo();
+    int firstValue = gerenciadorPilha.remover();
+    int secondValue = gerenciadorPilha.remover();
 
+    int result = calculadora.execute(secondValue,firstValue, "/");
+    gerenciadorPilha.adicionar(result);
+    ui->ExibirValor->append(QString("%1").arg(result));
 }
 
 void CalculadoraRNP::on_Rol_clicked()
