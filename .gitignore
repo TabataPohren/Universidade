@@ -17,6 +17,7 @@
 *.docx
 
 *.exe
+*.bin
 
 *.h
 *.Debug
@@ -24,3 +25,4 @@
 *.962b2e3
 *.stash
 */release/*
+*/debug/*
