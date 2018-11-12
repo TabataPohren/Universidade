@@ -107,17 +107,6 @@ void CalculadoraRNP::on_Enter_clicked()
     save= "";
 }
 
-
-void CalculadoraRNP::on_ExibirValor_textChanged()
-{
-
-}
-
-void CalculadoraRNP::on_SetaVoltar_clicked()
-{
-    ui->ExibirValor->setCursorWidth(10);
-}
-
 void CalculadoraRNP::on_Del_clicked()
 {
     ui->ExibirValor->undo();
@@ -180,4 +169,25 @@ void CalculadoraRNP::on_Rol_clicked()
     ui->ExibirValor->append(QString("%1").arg(firstValue));
     ui->ExibirValor->append(QString("%1").arg(secondValue));
 
+}
+
+void CalculadoraRNP::on_SetaDown_clicked()
+{
+    QTextCursor textCursor = ui->ExibirValor->textCursor();
+    textCursor.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor, 1);
+    ui->ExibirValor->setTextCursor(textCursor);
+}
+
+void CalculadoraRNP::on_SetaTop_clicked()
+{
+    QTextCursor textCursor = ui->ExibirValor->textCursor();
+    textCursor.movePosition(QTextCursor::Up, QTextCursor::MoveAnchor, 1);
+    ui->ExibirValor->setTextCursor(textCursor);
+}
+
+void CalculadoraRNP::on_SetaUp_clicked()
+{
+    QTextCursor textCursor = ui->ExibirValor->textCursor();
+    textCursor.movePosition(QTextCursor::Up, QTextCursor::MoveAnchor, 1);
+    ui->ExibirValor->setTextCursor(textCursor);
 }

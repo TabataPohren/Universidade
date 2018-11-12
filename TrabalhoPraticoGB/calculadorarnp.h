@@ -51,10 +51,6 @@ private slots:
 
     void on_ExibirValor_textChanged();
 
-    void on_enter_clicked();
-
-    void on_SetaVoltar_clicked();
-
     void on_Del_clicked();
 
     void on_Clear_clicked();
@@ -66,6 +62,12 @@ private slots:
     void on_Divisao_clicked();
 
     void on_Rol_clicked();
+
+    void on_SetaDown_clicked();
+
+    void on_SetaTop_clicked();
+
+    void on_SetaUp_clicked();
 
 private:
     Ui::CalculadoraRNP *ui;

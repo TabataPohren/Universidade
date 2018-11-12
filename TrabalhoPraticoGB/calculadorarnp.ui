@@ -216,7 +216,7 @@
      <string>÷</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="SetaAvancar">
+   <widget class="QPushButton" name="SetaDown">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -240,19 +240,6 @@
     </property>
     <property name="text">
      <string>0</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SetaVoltar">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>250</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>↑</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Rol">
@@ -292,6 +279,19 @@
     </property>
     <property name="text">
      <string>Del</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SetaUp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>↑</string>
     </property>
    </widget>
   </widget>
